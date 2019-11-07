@@ -140,6 +140,11 @@ public class ManutencaoAnimal extends javax.swing.JDialog {
         cmbbxSituacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnAdicionar.setText("ADICIONAR");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
         btnAlterar.setText("ALTERAR");
 
@@ -248,7 +253,7 @@ public class ManutencaoAnimal extends javax.swing.JDialog {
                             .addComponent(btnListagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel12)
                             .addComponent(jSeparator1))
-                        .addGap(0, 146, Short.MAX_VALUE))
+                        .addGap(0, 19, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,12 +358,9 @@ public class ManutencaoAnimal extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-rdbtnVaca.setSelected(false);
-rdbtnTouro.setSelected(false);
-rdbtnInterna.setSelected(false);
-rdbtnExterna.setSelected(false);
-rdbtnSim.setSelected(false);
-rdbtnNao.setSelected(false);
+btngrpSexo.clearSelection();
+btngrpOrigem.clearSelection();
+btngrpMamando.clearSelection();
 jtfCodigo.setText("");
 jtfBrinco.setText("");
 jtfNome.setText("");
@@ -368,6 +370,18 @@ cmbbxSituacao.setSelectedItem(null);
 cmbbxMae.setSelectedItem(null);
 cmbbxPai.setSelectedItem(null);
 cmbbxRaca.setSelectedItem(null);
+jtfCodigo.setEnabled(true);
+jtfNome.setEnabled(true);
+jtfBrinco.setEnabled(true);
+dtNascimento.setEnabled(true);
+cmbbxMae.setEnabled(true);
+cmbbxPai.setEnabled(true);
+rdbtnInterna.setEnabled(true);
+rdbtnExterna.setEnabled(true);
+rdbtnSim.setEnabled(true);
+rdbtnNao.setEnabled(true);
+cmbbxSituacao.setEnabled(true);
+cmbbxRaca.setEnabled(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_btnLimparActionPerformed
 
@@ -409,6 +423,14 @@ dispose();        // TODO add your handling code here:
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
 dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnFecharActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+if (rdbtnVaca.isSelected()){
+    controlador.ControladorVaca.inserir(this);
+        } else {
+    controlador.ControladorTouro.inserir(this);
+}// TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarActionPerformed
 
     /**
      * @param args the command line arguments
