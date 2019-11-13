@@ -11,7 +11,7 @@ package modelo;
  */
 public class Vaca {
     private String brinco;
-
+    
     public String getBrinco() {
         return brinco;
     }

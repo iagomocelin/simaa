@@ -12,6 +12,7 @@ package modelo;
 public class Touro {
     private Integer codigo;
     private String nome;
+    private Raca raca;
 
     public Integer getCodigo() {
         return codigo;
@@ -29,6 +30,15 @@ public class Touro {
         this.nome = nome;
     }
 
+    public Raca getRaca() {
+        return raca;
+    }
+
+    public void setRaca(Raca raca) {
+        this.raca = raca;
+    }
+
+    
     @Override
     public String toString() {
         return "Touro{" + "nome=" + nome + '}';
